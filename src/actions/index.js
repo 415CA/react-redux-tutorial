@@ -1,3 +1,3 @@
-import doArchiveStory from './Archive';
+import { doArchiveStory } from './Archive';
 
 export { doArchiveStory }; 
