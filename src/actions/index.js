@@ -1,4 +1,4 @@
 import { doArchiveStory } from './Archive';
-import { doAddStories, doFetchStories } from './Story'
+import { doAddStories, doFetchStories, doFetchErrorStories } from './Story'
 
-export { doArchiveStory, doAddStories, doFetchStories }; 
+export { doArchiveStory, doAddStories, doFetchStories, doFetchErrorStories }; 
