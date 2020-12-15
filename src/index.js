@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import store from './store';
 import { getReadableStories } from './selectors';
-import { STORY_ARCHIVE } from './constants/actionTypes';
+import { doArchiveStory } from './actions';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
@@ -11,7 +11,7 @@ const render = () => {
   ReactDOM.render(
     <App
       stories={getReadableStories(store.getState())}
-      onArchive={id => store.dispatch({ type: STORY_ARCHIVE, id })}
+      onArchive={id => store.dispatch(doArchiveStory(id))}
     />,
     document.getElementById('root')
   );
