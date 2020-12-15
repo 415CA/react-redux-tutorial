@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
   <App 
-    stories={store.getState()}
+    stories={store.getState().storyState}
     onArchive={() => {}}
   />,
   </React.StrictMode>,
