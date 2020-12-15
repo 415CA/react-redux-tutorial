@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { doFetchStories } from '../../actions/index';
 import Button from '../Button';
 import Input from '../Input';
 import Form from '../Form';
@@ -15,7 +17,7 @@ const SearchStories = ({ onFetchStories }) => {
   }
 
   return (
-    <Form>
+    <Form onSubmit={onSubmit}>
       <Input 
         type='text' 
         value={query} 
@@ -31,4 +33,11 @@ const SearchStories = ({ onFetchStories }) => {
   )
 }
 
-export default SearchStories
+const mapDispatchToProps = (dispatch) => ({
+  onFetchStories: query => dispatch(doFetchStories(query)),
+});
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(SearchStories);
